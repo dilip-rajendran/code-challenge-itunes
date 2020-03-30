@@ -71,12 +71,11 @@ struct AlbumDetailScreenViewModel {
         }
         return nil
     }
-    func getSafariUrlFromContent(urlString: String?) -> SFSafariViewController? {
+    func getSafariUrlFromContent(urlString: String?) {
         
         if let stringURL = urlString, let url = URL(string: stringURL) {
-            let config = SFSafariViewController.Configuration()
-            return SFSafariViewController(url: url, configuration: config)
+    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+
         }
-        return nil
     }
 }

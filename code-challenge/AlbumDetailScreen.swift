@@ -134,8 +134,6 @@ extension AlbumDetailScreen {
 
 extension AlbumDetailScreen {
     func redirectToWebView(urlString: String?) {
-        guard let safariController = viewModel?.getSafariUrlFromContent(urlString: urlString) else { return }
-        self.present(safariController, animated: true, completion: nil)
-
+        viewModel?.getSafariUrlFromContent(urlString: urlString)    
     }
 }
